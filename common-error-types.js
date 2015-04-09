@@ -8,7 +8,7 @@ var util = require('util');
 
 var CommonErrors = {
   /**
-   * User not found
+   * Bad query
    */
   QueryError: function (msg) {
     this.name = 'QueryError';
