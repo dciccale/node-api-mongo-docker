@@ -1,0 +1,14 @@
+api:
+  build: .
+  volumes:
+    - ".:/home/api"
+  ports:
+    - "80:8888"
+  environment:
+    NODE_ENV: production
+  links:
+    - mongo
+mongo:
+  image: mongo
+  ports:
+    - "27017:27017"

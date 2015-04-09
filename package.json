@@ -1,0 +1,37 @@
+{
+  "name": "node-api-docker-boilerplate",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node .",
+    "test": "NODE_ENV=test ./node_modules/.bin/mocha --reporter nyan --recursive test/",
+    "coverage": "./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha -- --recursive",
+    "lint": "./node_modules/.bin/eslint index.js **/*.js || true"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com/dciccale/node-api-docker-boilerplate.git"
+  },
+  "author": "Denis Ciccale (@tdecs)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dciccale/node-api-docker-boilerplate/issues"
+  },
+  "homepage": "https://github.com/dciccale/node-api-docker-boilerplate",
+  "devDependencies": {
+    "chai": "^2.2.0",
+    "eslint": "^0.18.0",
+    "istanbul": "^0.3.13",
+    "mocha": "^2.2.1"
+  },
+  "dependencies": {
+    "bluebird": "^2.9.24",
+    "boom": "^2.7.0",
+    "crypto": "0.0.3",
+    "hapi": "^8.4.0",
+    "jsonwebtoken": "^4.2.2",
+    "lodash": "^3.6.0",
+    "mongoose": "^4.0.1"
+  }
+}

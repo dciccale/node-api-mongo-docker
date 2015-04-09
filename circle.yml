@@ -1,0 +1,15 @@
+machine:
+  services:
+    - docker
+
+dependencies:
+  override:
+    - sudo pip install docker-compose
+    - npm install
+
+test:
+  override:
+    - docker-compose run -d --no-deps api
+    - npm run lint
+    - npm run coverage
+    - npm test
