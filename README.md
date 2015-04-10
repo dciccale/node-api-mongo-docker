@@ -55,7 +55,7 @@ See [docker-compose.yml](docker-compose.yml) and [Dockerfile](Dockerfile)
 Will install al dependencies, run the api server for production through port 8888 mapped to
 port 80.
 
-Image at DockerHub [dciccale/node-hapijs-mongo-docker](https://registry.hub.docker.com/u/dciccale/node-hapijs-mongo-docker/)
+Image at DockerHub [dciccale/node-api-mongo-docker](https://registry.hub.docker.com/u/dciccale/node-api-mongo-docker/)
 
 ## Continuous Integration
 
