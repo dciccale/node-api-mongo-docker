@@ -7,7 +7,8 @@
     "start": "node .",
     "test": "NODE_ENV=test ./node_modules/.bin/mocha --reporter nyan --recursive test/",
     "coverage": "NODE_ENV=test ./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha -- --recursive",
-    "lint": "./node_modules/.bin/eslint index.js **/*.js || true"
+    "lint": "./node_modules/.bin/eslint index.js **/*.js || true",
+    "prod": "NODE_ENV=production node ."
   },
   "repository": {
     "type": "git",
