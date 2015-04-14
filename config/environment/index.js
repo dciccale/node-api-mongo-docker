@@ -8,7 +8,7 @@ var all = {
   env: process.env.NODE_ENV,
 
   // Server port
-  port: process.env.PORT || 8888,
+  port: process.env.PORT || 9001,
 
   // Should we populate the DB with sample data?
   seedDB: false,
