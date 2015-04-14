@@ -1,7 +1,7 @@
 'use strict';
 
 var MONGO_ADDR = process.env.MONGO_PORT_27017_TCP_ADDR || 'localhost';
-var MONGO_PORT = process.env.MONGO_PORT_27017_TCP_PORT || 80;
+var MONGO_PORT = process.env.MONGO_PORT_27017_TCP_PORT || 27017;
 
 // Development specific configuration
 // ==================================

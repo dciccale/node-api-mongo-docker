@@ -7,13 +7,13 @@ var server = new Hapi.Server();
 var mongoose = require('mongoose');
 var config = require('./config/environment');
 
-mongoose.connect(config.mongo.uri, config.mongo.options);
+require('./db')(config);
 server.connection({port: config.port});
 
 require('./routes')(server);
 
 server.start(function () {
-  console.log('Server running at:', server.info.uri);
+  console.log('Server listening on %d, in %s mode', config.port, config.env);
 });
 
 module.exports = server;
