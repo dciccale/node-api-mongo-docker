@@ -9,47 +9,69 @@ var userErrorTypes = require('./user-error-types');
 var userService = new UserService(UserModel, commonErrorTypes, userErrorTypes);
 var userController = new UserController(userService, commonErrorTypes, userErrorTypes);
 
-// common route config
-// bind route handler to the controller
-var config = {
-  bind: userController
-};
-
 module.exports = [
   {
     method: 'GET',
     path: '/users',
-    handler: userController.index,
-    config: config
+    config: {
+      handler: userController.index,
+      bind: userController,
+      auth: {
+        strategy: 'simple',
+        scope: 'admin'
+      }
+    }
   },
   {
     method: 'DELETE',
     path: '/users/{id}',
-    handler: userController.destroy,
-    config: config
+    config: {
+      handler: userController.destroy,
+      bind: userController,
+      auth: {
+        strategy: 'simple'
+      }
+    }
   },
   {
     method: 'GET',
     path: '/users/me',
-    handler: userController.me,
-    config: config
+    config: {
+      handler: userController.me,
+      bind: userController,
+      auth: {
+        strategy: 'simple'
+      }
+    }
   },
   {
     method: 'PUT',
     path: '/users/{id}/password',
-    handler: userController.changePassword,
-    config: config
+    config: {
+      handler: userController.changePassword,
+      bind: userController,
+      auth: {
+        strategy: 'simple'
+      }
+    }
   },
   {
     method: 'GET',
     path: '/users/{id}',
-    handler: userController.show,
-    config: config
+    config: {
+      handler: userController.show,
+      bind: userController,
+      auth: {
+        strategy: 'simple'
+      }
+    }
   },
   {
     method: 'POST',
     path: '/users',
     handler: userController.create,
-    config: config
+    config: {
+      bind: userController
+    }
   }
 ];

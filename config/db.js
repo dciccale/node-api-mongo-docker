@@ -15,5 +15,10 @@ module.exports = function (config) {
     process.exit(-1);
   });
 
+  // Populate DB with sample data
+  if (config.seedDB) {
+    require('./seed');
+  }
+
   return db;
 };

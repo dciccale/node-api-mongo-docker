@@ -5,7 +5,7 @@
 
 'use strict';
 
-var User = require('../user/user-model');
+var User = require('../modules/user/user-model');
 
 User.find({}).remove(function() {
   User.create({
@@ -15,10 +15,10 @@ User.find({}).remove(function() {
     password: 'test'
   }, {
     provider: 'local',
-    role: 'admin',
     name: 'Admin',
     email: 'admin@admin.com',
-    password: 'admin'
+    password: 'admin',
+    role: 'admin'
   }, function() {
       console.log('> Finished populating users');
     }

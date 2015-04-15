@@ -13,9 +13,8 @@ var all = {
   // Should we populate the DB with sample data?
   seedDB: false,
 
-  // Secret for session, you will want to change this and make it an environment variable
   secrets: {
-    session: 'node-api-docker-boilerplate'
+    session: process.env.SESSION_SECRET || 'node-api-docker-boilerplate-secret'
   },
 
   // List of user roles

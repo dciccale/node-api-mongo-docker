@@ -16,5 +16,9 @@ module.exports = {
   // MongoDB connection options
   mongo: {
     uri: 'mongodb://' + MONGO_ADDR + ':' + MONGO_PORT + '/node-api-docker-boilerplate'
+  },
+
+  secrets: {
+    session: process.env.SESSION_SECRET
   }
 };

@@ -7,7 +7,7 @@
     "start": "node .",
     "test": "NODE_ENV=test ./node_modules/.bin/mocha --reporter nyan --recursive test/",
     "coverage": "NODE_ENV=test ./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha -- --recursive",
-    "lint": "./node_modules/.bin/eslint index.js **/*.js || true",
+    "lint": "./node_modules/.bin/eslint index.js start.js **/*.js || true",
     "prod": "NODE_ENV=production node ."
   },
   "repository": {
@@ -23,16 +23,26 @@
   "devDependencies": {
     "chai": "^2.2.0",
     "eslint": "^0.18.0",
+    "gaze": "^0.5.1",
     "istanbul": "^0.3.13",
     "mocha": "^2.2.1"
   },
   "dependencies": {
+    "bell": "^2.3.0",
     "bluebird": "^2.9.24",
     "boom": "^2.7.0",
     "crypto": "0.0.3",
     "hapi": "^8.4.0",
+    "hapi-auth-basic": "^2.0.0",
+    "hapi-auth-bearer-token": "^3.1.1",
+    "hapi-auth-cookie": "^2.0.0",
+    "hapi-passport": "0.0.5",
+    "joi": "^6.1.2",
     "jsonwebtoken": "^4.2.2",
     "lodash": "^3.6.0",
-    "mongoose": "^4.0.1"
+    "mongoose": "^4.0.1",
+    "passport": "^0.2.1",
+    "passport-local": "^1.0.0",
+    "passport-local-mongoose": "^1.0.0"
   }
 }
