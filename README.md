@@ -10,14 +10,24 @@ $ npm install
 
 ## Development
 
+Watch `*.js` files and restart the server.
+
 ```bash
-$ npm start
+$ node start
 ```
 
-List users
+### Examples
+
+Login with sample admin user:
 
 ```bash
-curl http://localhost:8888/users
+$ curl -H "Content-Type: application/json" -X POST -d '{"email": "admin@admin.com", "password": "admin"}' http://localhost:9001/login
+```
+
+This will return a token replace `<token>` by that value and try retrieving the list of users:
+
+```bash
+$ curl -H "Authorization: Bearer <token>" http://localhost:9001/users
 ```
 
 ## Tests
@@ -52,8 +62,7 @@ $ docker-compose up
 
 See [docker-compose.yml](docker-compose.yml) and [Dockerfile](Dockerfile)
 
-Will install al dependencies, run the api server for production through port 8888 mapped to
-port 80.
+Will install al dependencies, and run the api server in production mode.
 
 Image at DockerHub [dciccale/node-api-mongo-docker](https://registry.hub.docker.com/u/dciccale/node-api-mongo-docker/)
 
