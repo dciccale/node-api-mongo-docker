@@ -14,7 +14,7 @@ var spawn = require('child_process').spawn;
 var server;
 
 // Watch files
-gaze(['!start.js', '!./node_modules', '**/*.js'], function (err) {
+gaze(['./lib/**/*.js', './config/**/*.js'], function (err) {
   if (err) {
     throw err;
   }

@@ -5,7 +5,7 @@
 
 'use strict';
 
-var User = require('../modules/user/user-model');
+var User = require('../lib/modules/user/user-model');
 
 User.find({}).remove(function() {
   User.create({

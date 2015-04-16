@@ -2,10 +2,10 @@
 
 var expect = require('chai').expect;
 require('../../../');
-var UserModel = require('../../../modules/user/user-model');
-var UserService = require('../../../modules/user/user-service');
-var commonErrorTypes = require('../../../common-error-types');
-var userErrorTypes = require('../../../modules/user/user-error-types');
+var UserModel = require('../../../lib/modules/user/user-model');
+var UserService = require('../../../lib/modules/user/user-service');
+var commonErrorTypes = require('../../../lib/common-error-types');
+var userErrorTypes = require('../../../lib/modules/user/user-error-types');
 
 describe('UserService', function () {
 

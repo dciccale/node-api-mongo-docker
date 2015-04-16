@@ -2,7 +2,7 @@
 
 var expect = require('chai').expect;
 require('../../../');
-var User = require('../../../modules/user/user-model');
+var User = require('../../../lib/modules/user/user-model');
 
 var user = new User({
   provider: 'local',
