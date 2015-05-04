@@ -25,7 +25,8 @@
     "eslint": "^0.18.0",
     "gaze": "^0.5.1",
     "istanbul": "^0.3.13",
-    "mocha": "^2.2.1"
+    "mocha": "^2.2.1",
+    "supertest": "^0.15.0"
   },
   "dependencies": {
     "bluebird": "^2.9.24",
