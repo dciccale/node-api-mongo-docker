@@ -17,3 +17,4 @@ test:
     - npm run coverage
   post:
     - cp -r ./coverage $CIRCLE_ARTIFACTS
+    - npm run coveralls

@@ -7,6 +7,7 @@
     "start": "node .",
     "test": "NODE_ENV=test ./node_modules/.bin/mocha --reporter nyan --recursive test/",
     "coverage": "NODE_ENV=test ./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha -- --recursive",
+    "coveralls": "npm run coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
     "lint": "./node_modules/.bin/eslint index.js start.js **/*.js || true",
     "prod": "NODE_ENV=production node ."
   },
@@ -22,6 +23,7 @@
   "homepage": "https://github.com/dciccale/node-api-docker-boilerplate",
   "devDependencies": {
     "chai": "^2.2.0",
+    "coveralls": "^2.11.2",
     "eslint": "^0.18.0",
     "gaze": "^0.5.1",
     "istanbul": "^0.3.13",
