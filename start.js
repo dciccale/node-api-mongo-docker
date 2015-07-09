@@ -35,7 +35,7 @@ function start() {
     server = null;
   }
 
-  server = spawn(process.execPath, ['index'], {});
+  server = spawn(process.execPath, ['index']);
   server.stdout.setEncoding('utf8');
   server.stderr.setEncoding('utf8');
 
