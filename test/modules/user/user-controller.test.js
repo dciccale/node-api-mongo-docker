@@ -6,8 +6,6 @@ var server = require('../../../');
 var UserModel = require('../../../lib/modules/user/user-model');
 var UserService = require('../../../lib/modules/user/user-service');
 var UserController = require('../../../lib/modules/user/user-controller');
-var commonErrorTypes = require('../../../lib/common-error-types');
-var userErrorTypes = require('../../../lib/modules/user/user-error-types');
 
 describe('UserController', function () {
   var noop = function () {};
@@ -23,8 +21,8 @@ describe('UserController', function () {
   beforeEach(function (done) {
     // Clear users before testing
     UserModel.remove().exec().then(function () {
-      var userService = new UserService(UserModel, commonErrorTypes, userErrorTypes);
-      this.userController = new UserController(userService, commonErrorTypes, userErrorTypes);
+      var userService = new UserService(UserModel);
+      this.userController = new UserController(userService);
       done();
     }.bind(this))
   });
@@ -51,7 +49,7 @@ describe('UserController', function () {
         email: 'test@test.com'
       }}, function (data) {
         expect(data.output.statusCode).to.equal(422);
-        expect(data.output.payload.message).to.equal('Error: Invalid password');
+        expect(data.output.payload.message).to.equal('Invalid password');
         done();
       });
     })
@@ -165,7 +163,8 @@ describe('UserController', function () {
           }
         }, function (data) {
           expect(data.output.statusCode).to.equal(422);
-          expect(data.output.payload.message).to.equal('ValidationError: Password cannot be blank');
+          expect(data.output.payload.message).to.equal('User validation failed');
+          expect(data.output.payload.errors.hashedPassword.message).to.equal('Password cannot be blank');
           done();
         });
       }.bind(this));

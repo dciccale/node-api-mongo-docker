@@ -16,7 +16,6 @@ var user;
 describe('UserModel', function () {
   beforeEach(function (done) {
     user = new User(fakeUser);
-
     User.remove().exec().then(function () {
       done();
     });
