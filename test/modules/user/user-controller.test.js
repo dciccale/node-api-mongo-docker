@@ -144,7 +144,7 @@ describe('UserController', function () {
             newPassword: 'newpassword'
           }
         }, function (data) {
-          expect(data.output.statusCode).to.equal(401);
+          expect(data.output.statusCode).to.equal(403);
           expect(data.output.payload.message).to.equal('Authentication error');
           done();
         });
